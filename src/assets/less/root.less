@@ -13,24 +13,27 @@
 @media only screen and (min-width: 0px) {
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
 	:root {
-		--primary: #ff6a3e;
-		--primaryLight: #ffba43;
-		--secondary: #ffba43;
-		--secondaryLight: #ffba43;
-		--headerColor: #1a1a1a;
-		--bodyTextColor: #4e4b66;
-		--bodyTextColorWhite: #fafbfc;
+		--primary: #cdb690;
+		--primaryLight: #cdb690;
+		--secondary: #cdb690;
+		--secondaryLight: #cdb690;
+		--headerColor: #fff;
+		--bodyTextColor: #fff;
+		--bodyTextColorWhite: #fff;
+		--backgroundColor: #0f0f0f;
 
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
 		/* 31px - 49px */
-		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+		--headerFontSize: clamp(1.9375rem, 3.9vw, 5.0625rem);
 		--bodyFontSize: 1rem;
 		/* 60px - 100px top and bottom */
 		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 
-		--headerFont: "Roboto", Arial, sans-serif;
-		--bodyFont: "Roboto", Arial, sans-serif;
+		--headerLetterSpacing: -0.04em;
+
+		--headerFont: "Poppins", Arial, sans-serif;
+		--bodyFont: "Poppins", Arial, sans-serif;
 	}
 
 	html,
@@ -40,7 +43,8 @@
 		overflow-x: hidden;
 		font-family: var(--bodyFont);
 		font-size: 100%;
-color: var(--bodyTextColor);
+		color: var(--bodyTextColor);
+		background-color: var(--backgroundColor);
 	}
 
 	*,
@@ -66,11 +70,12 @@ color: var(--bodyTextColor);
 
 	.cs-title {
 		font-size: var(--headerFontSize);
-		font-weight: 900;
+		font-weight: 400 !important;
 		line-height: 1.2em;
 		text-align: inherit;
 		max-width: 43.75rem;
 		margin: 0 0 1rem 0;
+		letter-spacing: var(--headerLetterSpacing);
 		color: var(--headerColor);
 		position: relative;
 	}
@@ -253,31 +258,25 @@ color: var(--bodyTextColor);
 /* Fonts */
 @media only screen and (min-width: 0px) {
 	// Grab your fonts to locally host from https://gwfh.mranftl.com/fonts
-	/* roboto-regular - latin */
+	/* poppins-regular - latin */
 	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: "Poppins";
 		font-style: normal;
-		font-family: "Roboto";
 		font-weight: 400;
-		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		src:
+			url("/assets/fonts/poppins-v24-latin-regular.woff2") format("woff2"),
+			/* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("/assets/fonts/poppins-v24-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 	}
-
-	/* roboto-700 - latin */
+	/* poppins-600 - latin */
 	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: "Poppins";
 		font-style: normal;
-		font-family: "Roboto";
-		font-weight: 700;
-		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-	}
-
-	/* roboto-900 - latin */
-	@font-face {
-		font-style: normal;
-		font-family: "Roboto";
-		font-weight: 900;
-		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		font-weight: 600;
+		src:
+			url("/assets/fonts/poppins-v24-latin-600.woff2") format("woff2"),
+			/* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url("/assets/fonts/poppins-v24-latin-600.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 	}
 }
 
@@ -319,7 +318,9 @@ color: var(--bodyTextColor);
 			top: 100%;
 			right: 0;
 			z-index: -11;
-			transition: width 0.5s, opacity 0.3s;
+			transition:
+				width 0.5s,
+				opacity 0.3s;
 			-webkit-backdrop-filter: blur(10px);
 			backdrop-filter: blur(10px);
 		}
@@ -423,7 +424,10 @@ color: var(--bodyTextColor);
 
 		.cs-line1 {
 			top: 0;
-			transition: transform 0.5s, top 0.3s, left 0.3s;
+			transition:
+				transform 0.5s,
+				top 0.3s,
+				left 0.3s;
 			animation-duration: 0.7s;
 			animation-timing-function: ease;
 			animation-direction: normal;
@@ -434,7 +438,10 @@ color: var(--bodyTextColor);
 		.cs-line2 {
 			top: 50%;
 			transform: translateX(-50%) translateY(-50%);
-			transition: top 0.3s, left 0.3s, transform 0.5s;
+			transition:
+				top 0.3s,
+				left 0.3s,
+				transform 0.5s;
 			animation-duration: 0.7s;
 			animation-timing-function: ease;
 			animation-direction: normal;
@@ -443,7 +450,9 @@ color: var(--bodyTextColor);
 
 		.cs-line3 {
 			bottom: 0;
-			transition: bottom 0.3s, opacity 0.3s;
+			transition:
+				bottom 0.3s,
+				opacity 0.3s;
 		}
 
 		.cs-ul-wrapper {
@@ -458,7 +467,9 @@ color: var(--bodyTextColor);
 			z-index: -1;
 			overflow: hidden;
 			transform: scaleX(0);
-			transition: transform 0.4s, opacity 0.3s;
+			transition:
+				transform 0.4s,
+				opacity 0.3s;
 			transform-origin: top right;
 		}
 
@@ -485,7 +496,9 @@ color: var(--bodyTextColor);
 			opacity: 0;
 			/* transition from these values */
 			transform: translateX(-2.5rem);
-			transition: transform 0.6s, opacity 0.9s;
+			transition:
+				transform 0.6s,
+				opacity 0.9s;
 
 			&:nth-of-type(1) {
 				transition-delay: 0.05s;
@@ -623,7 +636,13 @@ color: var(--bodyTextColor);
 			gap: (12/16rem);
 			overflow: hidden;
 			transform: scale(0);
-			transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
+			transition:
+				padding 0.3s,
+				margin 0.3s,
+				height 0.3s,
+				opacity 0.3s,
+				transform 0.3s,
+				visibility 0.3s;
 			transform-origin: top right;
 		}
 
@@ -700,7 +719,10 @@ color: var(--bodyTextColor);
 			z-index: -100;
 			overflow: hidden;
 			transform: scaleY(0);
-			transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+			transition:
+				transform 0.3s,
+				visibility 0.3s,
+				opacity 0.3s;
 			transform-origin: top;
 		}
 
@@ -714,7 +736,9 @@ color: var(--bodyTextColor);
 			opacity: 0;
 			display: block;
 			transform: translateY(-0.625rem);
-			transition: opacity 0.6s, transform 0.6s;
+			transition:
+				opacity 0.6s,
+				transform 0.6s;
 
 			&:nth-of-type(1) {
 				transition-delay: 0.05s;
@@ -771,7 +795,9 @@ color: var(--bodyTextColor);
 				background-color: #f7f7f7;
 				outline: none;
 				display: block;
-				transition: color 0.3s, background-color 0.3s;
+				transition:
+					color 0.3s,
+					background-color 0.3s;
 
 				&:hover {
 					background-color: #f0f0f0;
@@ -1157,7 +1183,9 @@ color: var(--bodyTextColor);
 			align-items: center;
 			position: relative;
 			z-index: 1;
-			transition: transform 0.3s, background-color 0.3s;
+			transition:
+				transform 0.3s,
+				background-color 0.3s;
 
 			&:hover {
 				background-color: #1a1a1a;
