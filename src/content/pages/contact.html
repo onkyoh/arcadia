@@ -1,0 +1,95 @@
+---
+title: "Inquire Today | Arcadia Micro Structures"
+description: "Ready to add a premium micro-structure to your property? Inquire today about guest houses, income suites, backyard studios, and hospitality partnerships from Arcadia Micro Structures."
+permalink: "/contact/"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<!--  -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 400, height: 398 }) | webp %}" />
+<!--  -->
+
+
+<link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css" />
+
+
+<!-- Any page-specific tags that belong in the <head> -->
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+
+<section id="contact-717">
+	<div class="cs-container">
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 400, height: 398 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 832, height: 1660 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1976, height: 1660 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1976, height: 1660 }) | jpeg %}" alt="Arcadia Micro Structures luxury retreat unit concept" width="988" height="830" fetchpriority="high" decoding="async">
+</picture>
+
+		<div class="cs-content">
+			<h2 class="cs-title">Inquire Today</h2>
+			<p class="cs-text">Whether you're looking to add a guest house, generate income with an Airbnb suite, or create your own private retreat — we'll walk you through the right fit for your property and goals.</p>
+			<!--Form-->
+			<form class="cs-form" id="cs-form-717" name="Contact Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+				<input type="hidden" name="form-name" value="Contact Form" />
+				<p style="display: none">
+					<label>
+						Don't fill this out:
+						<input name="bot-field" />
+					</label>
+				</p>
+				<label class="cs-label">
+					Name
+					<input class="cs-input" required type="text" id="name-717" name="name" placeholder="Name" />
+				</label>
+				<label class="cs-label cs-email">
+					Email
+					<input class="cs-input" required type="email" id="email-717" name="email" placeholder="Email" />
+				</label>
+				<label class="cs-label cs-phone">
+					Phone
+					<input class="cs-input" required type="tel" id="phone-717" name="phone" placeholder="Phone" />
+				</label>
+				<label class="cs-label cs-city">
+					City
+					<input class="cs-input" required type="text" id="city-717" name="city" placeholder="City" />
+				</label>
+				<label class="cs-label cs-property">
+					Property Type
+					<input class="cs-input" required type="text" id="property-717" name="property-type" placeholder="Property Type" />
+				</label>
+				<fieldset class="cs-fieldset">
+					<legend class="cs-legend">I'm Interested In</legend>
+					<div class="cs-checkbox-group">
+						<label class="cs-checkbox-label">
+							<input type="checkbox" name="interest" value="Guest House" />
+							<span class="cs-custom-check"></span>
+							Guest House
+						</label>
+						<label class="cs-checkbox-label">
+							<input type="checkbox" name="interest" value="Airbnb / Income Suite" />
+							<span class="cs-custom-check"></span>
+							Airbnb / Income Suite
+						</label>
+						<label class="cs-checkbox-label">
+							<input type="checkbox" name="interest" value="Backyard Studio" />
+							<span class="cs-custom-check"></span>
+							Backyard Studio
+						</label>
+					</div>
+				</fieldset>
+
+				<button class="cs-button-solid cs-submit" type="submit">Send Inquiry</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

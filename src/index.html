@@ -8,10 +8,514 @@ tags: "sitemap"
 {% extends "layouts/base.html" %} {% block head %}
 
 <link rel="stylesheet" href="/assets/css/critical.css" />
+
+<link rel="preload" as="image" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 576, height: 1574 }) | webp %}" />
+
+<!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+{% if client.isProduction %}
+<link
+	rel="preload"
+	href="/assets/css/local.css"
+	as="style"
+	onload="
+		this.onload = null;
+		this.rel = 'stylesheet';
+	" />
+<noscript>
+	<link rel="stylesheet" href="/assets/css/local.css" />
+</noscript>
+
+{% else %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+{% endif %}
+
+<script defer src="/assets/js/carousel.js"></script>
+
+<!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+<!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+<!-- {% include "components/home-schema.html" %} -->
+
 {% endblock %} {% block body %}
-<section id="home">
-	<h1 class="cs-title">Coming Soon</h1>
-	<img src="/assets/svgs/logo.svg" alt="" />
-	<a href="mailto:{{client.email}}" class="cs-link">{{client.email}}</a>
+
+<!-- ============================================ -->
+<!--                   Hero                       -->
+<!-- ============================================ -->
+
+<section id="hero-2344">
+	<div class="cs-container">
+		<div class="cs-content">
+			<div class="cs-flex cs-flex1">
+				<span class="cs-heading">Designed. Built. Deployed.</span>
+				<h2 class="cs-title">
+					<span>You Choose The Unit</span>
+					You Decide What It Becomes
+				</h2>
+				<div class="cs-button-group">
+					<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+					<a href="/gallery/" class="cs-button-solid cs-button-transparent">Explore Concepts</a>
+				</div>
+			</div>
+		</div>
+		<!--Background Image-->
+		<picture class="cs-background">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 576, height: 1574 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1864, height: 1658 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1206 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1206 }) | jpeg %}" alt="fancy modern architecture" width="1800" height="868" fetchpriority="high" decoding="async">
+
+		</picture>
+	</div>
 </section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-2355">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">The Concept</h2>
+		</div>
+		<ul class="cs-card-group">
+			<li class="cs-item">
+				<a href="/hospitality" class="cs-link">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Arcadia micro-structure on a golf course with guests relaxing on deck at sunset" width="587" height="350" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Hospitality</h3>
+					<p class="cs-item-text">Premium structures designed for outdoor venues that want to eleevate their guest experience.</p>
+				</a>
+			</li>
+			<li class="cs-item">
+				<a href="/income-suites/" class="cs-link">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Modern white and wood micro-structure nestled in a forested property" width="587" height="350" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Income Suites (AirBnB)</h3>
+					<p class="cs-item-text">A self-contained premium unit that adds value to your property and flexibility to your finances.</p>
+				</a>
+			</li>
+			<li class="cs-item">
+				<a href="/backyard-studios/" class="cs-link">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Glass-front Arcadia backyard studio glowing warmly at night in a suburban yard" width="587" height="350" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Backyard Studios</h3>
+					<p class="cs-item-text">Your own private space. A creative studio, a personal sanctuary, or simply room to breathe.</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Not Typical                    -->
+<!-- ============================================ -->
+
+<section id="typical">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Not Your Typical Backyard Space</h2>
+			<p class="cs-text">Arcadia Micro Structures are designed around lifestyle, flexibility, aesthetics, and modern living.</p>
+			<p class="cs-text">
+				This is not a shipping container.
+				<br />
+				This is not a basic bunkie.
+				<br />
+				This is not a temporary structure.
+			</p>
+			<p class="cs-text">These are premium micro-structures designed to enhance property value, create flexible living space, and generate income potential.</p>
+			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 912, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Premium A-frame micro-structure with stone base and floor-to-ceiling windows at sunset" width="1193" height="680" loading="lazy" decoding="async">
+
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Multiple Ways                    -->
+<!-- ============================================ -->
+
+<section id="models">
+	<div class="cs-wrapper">
+		<h2 class="cs-title">Multiple Ways To Use Your Property</h2>
+
+		<div class="cs-container">
+			<div class="cs-content">
+				<h3 class="cs-h3">Personal Model</h3>
+				<p class="cs-text">
+					Personal use
+					<br />
+					Guest house
+					<br />
+					AirBnB income
+					<br />
+					Full ownership
+					<br />
+					Adds property value
+					<br />
+				</p>
+				<h3 class="cs-h3">Income Model</h3>
+				<p class="cs-text">
+					You use it when desired
+					<br />
+					Let the unit generate income when your not using it
+					<br />
+					Flexible lifestyle + revenue approach
+				</p>
+				<h3 class="cs-h3">Land Lease Model</h3>
+				<p class="cs-text">
+					Airbnb-focused placement
+					<br />
+					Revenue-sharing structures
+					<br />
+					Long-term partnership models
+					<br />
+					Flexible land-use arrangements
+				</p>
+				<span class="cs-heading">Ideal Locations May Include</span>
+				<p class="cs-text">
+					Scenic rural properties
+					<br />
+					Waterfront or recreational areas
+					<br />
+					Tourism-driven regions
+					<br />
+					High-demand short-term rental markets
+				</p>
+				<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+			</div>
+			<picture class="cs-picture">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 912, height: 1434 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 2386, height: 1434 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 2386, height: 1434 }) | jpeg %}" alt="Arcadia micro-structure with large glass windows set among birch trees at golden hour" width="1193" height="717" loading="lazy" decoding="async">
+
+			</picture>
+		</div>
+	</div>
+</section>
+
+<section id="carousel">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Pick Your Style</h2>
+		</div>
+		<div class="cs-carousel-viewport">
+			<ul class="cs-card-group">
+				<li class="cs-item">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Modern black gable micro-structure with stone facade and wood accents in an open field" width="540" height="380" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Modern</h3>
+				</li>
+				<li class="cs-item">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Wood retreat micro-structure overlooking a lake with a fire pit on the deck" width="540" height="380" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Retreat</h3>
+				</li>
+				<li class="cs-item">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Rustic vertical cedar-clad micro-structure with sliding glass doors in a pine forest" width="540" height="380" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Rustic</h3>
+				</li>
+				<li class="cs-item">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Luxury white concrete and glass micro-structure with wraparound glazing on a manicured lot" width="540" height="380" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Luxury</h3>
+				</li>
+				<li class="cs-item">
+					<picture class="cs-picture">
+						<!--Mobile Image-->
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Contemporary flat-roof micro-structure with horizontal wood cladding and floor-to-ceiling glass" width="540" height="380" loading="lazy" decoding="async">
+
+					</picture>
+					<h3 class="cs-h3">Contemporary</h3>
+				</li>
+			</ul>
+		</div>
+		<div class="cs-progress-track">
+			<div class="cs-carousel-bar"></div>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Process                    -->
+<!-- ============================================ -->
+
+<section id="process">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Simple Process</h2>
+			<ul class="cs-ul">
+				<li class="cs-li">
+					<span class="cs-heading">01 Choose your unit</span>
+					<h3 class="cs-h3">Select the design that fits your goals</h3>
+				</li>
+				<li class="cs-li">
+					<span class="cs-heading">02 Choose How You Use It</span>
+					<h3 class="cs-h3">Lifestyle, income, or both.</h3>
+				</li>
+				<li class="cs-li">
+					<span class="cs-heading">03 We Build it</span>
+					<h3 class="cs-h3">Precision-Built Construction Systems</h3>
+				</li>
+				<li class="cs-li">
+					<span class="cs-heading">04 WE Deliver and Place it</span>
+					<h3 class="cs-h3">Minimal disruption to your property</h3>
+				</li>
+				<li class="cs-li">
+					<span class="cs-heading">05 Use it, rent it, or both</span>
+					<h3 class="cs-h3">You decide how it works for you.</h3>
+				</li>
+			</ul>
+			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+		</div>
+
+		<picture class="cs-picture cs-picture1">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 516, height: 1076 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | jpeg %}" alt="Completed Arcadia micro-structure installed in a residential backyard" width="511" height="538" loading="lazy" decoding="async">
+
+		</picture>
+		<picture class="cs-picture cs-picture2">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 674, height: 1656 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1326, height: 1380 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1326, height: 1380 }) | jpeg %}" alt="Close-up of premium cedar siding with black metal trim on an Arcadia structure" width="663" height="690" loading="lazy" decoding="async">
+
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-2358">
+	<div class="cs-container">
+		<picture class="cs-picture cs-picture1">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 576, height: 704 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 912, height: 1280 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1280 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1280 }) | jpeg %}" alt="Arcadia hospitality unit on a golf course with guests enjoying the outdoor deck at sunset" width="587" height="640" loading="lazy" decoding="async">
+
+		</picture>
+		<div class="cs-content">
+			<h2 class="cs-title">Hospitality Partnerships</h2>
+
+			<picture class="cs-picture cs-picture2">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 576, height: 844 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 912, height: 1228 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia premium unit placed at vineyard" width="1193" height="680" loading="lazy" decoding="async">
+
+			</picture>
+
+			<h3 class="cs-h3">Designed for golf courses, wineries, and event venues looking to create premium overnight guest experiences directly on-site.</h3>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq-2294">
+	<div class="cs-container">
+		<div class="cs-faq-group">
+			<div class="cs-content">
+				<h2 class="cs-title">Common Questions</h2>
+			</div>
+			<picture class="cs-faq-picture">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 576, height: 720 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 766, height: 1154 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | jpeg %}" alt="Cozy wood-clad Arcadia backyard studio glowing warmly at night with car in driveway" width="514" height="547" loading="lazy" decoding="async">
+
+			</picture>
+			<ul class="cs-faq">
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">1. Can this be used as an AirBnB?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<!-- Active class added as default -->
+				<li class="cs-faq-item actived">
+					<button class="cs-button">
+						<span class="cs-button-text">2. Can this be a guest house?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">3. Do I need a large property?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">4. Can the designs be customized?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">5. What types of properties work best?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">6. How long does the process take?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">7. Are partnership models available?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">8. Do these meet Ontario building code requirements?</span>
+					</button>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="cs-picture-group">
+			<picture class="cs-picture">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 576, height: 592 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1864, height: 832 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | jpeg %}" alt="White traditional-style Arcadia micro-structure with stone pathway through trees at dusk" width="587" height="700" loading="lazy" decoding="async">
+
+			</picture>
+			<h3 class="cs-h3">Answer Not Here?</h3>
+			<p class="cs-text">Every property and situation is unique. Reach out directly and we'll walk you through it.</p>
+			<a href="mailto:{{client.email}}" class="cs-button-solid">Ask A Question</a>
+		</div>
+	</div>
+</section>
+
+<script>
+	const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
+	for (const item of faqItems) {
+		const onClick = () => {
+			item.classList.toggle("active");
+		};
+		item.addEventListener("click", onClick);
+	}
+</script>
+
 {% endblock %}
