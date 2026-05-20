@@ -22,11 +22,11 @@
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
 		/* 31px - 49px */
-		--headerFontSize: clamp(2.5375rem, 3.9vw, 5.0625rem);
+		--headerFontSize: clamp(2.5375rem, 6vw, 5.0625rem);
 		--bodyFontSize: 1rem;
 		/* 60px - 100px top and bottom */
 		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) clamp(1rem, 4.5vw, 3.75rem);
-
+		--columnGap: clamp(1rem, 2.5vw, 1.25rem);
 		--headerLetterSpacing: -0.04em;
 
 		--headerFont: "Poppins", Arial, sans-serif;
@@ -57,7 +57,7 @@
 
 	.cs-heading {
 		font-family: var(--bodyFont);
-		font-size: (20/16rem);
+		font-size: clamp(1rem, 3vw, 1.25rem);
 		text-align: inherit;
 		text-transform: uppercase;
 		margin-bottom: 0.25rem;
@@ -68,7 +68,7 @@
 	.cs-title {
 		font-size: var(--headerFontSize);
 		font-weight: 400 !important;
-		line-height: 1.2em;
+		line-height: 1em;
 		text-align: inherit;
 		letter-spacing: var(--headerLetterSpacing);
 
@@ -180,8 +180,9 @@
 	h5,
 	h6 {
 		font-family: var(--headerFont);
-		line-height: 1.2em;
+		line-height: 1em;
 		color: var(--headerColor);
+		font-weight: 400;
 	}
 
 	p,
