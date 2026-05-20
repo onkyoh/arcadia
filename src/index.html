@@ -9,6 +9,8 @@ tags: "sitemap"
 
 <link rel="stylesheet" href="/assets/css/critical.css" />
 
+<link rel="preload" as="image" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 576, height: 1574 }) | webp %}" />
+
 <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
 {% if client.isProduction %}
 <link
@@ -57,10 +59,13 @@ tags: "sitemap"
 		<!--Background Image-->
 		<picture class="cs-background">
 			<!--Mobile Image-->
-			<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building14.jpg" />
-			<!--Tablet and above Image-->
-			<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building14.jpg" />
-			<img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building14.jpg" alt="fancy modern architecture" width="1800" height="860" />
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 576, height: 1574 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1864, height: 1658 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1206 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1206 }) | jpeg %}" alt="fancy modern architecture" width="1800" height="868" fetchpriority="high" decoding="async">
+
 		</picture>
 	</div>
 </section>
@@ -79,10 +84,13 @@ tags: "sitemap"
 				<a href="/hospitality" class="cs-link">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Arcadia micro-structure on a golf course with guests relaxing on deck at sunset" width="587" height="350" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Hospitality</h3>
 					<p class="cs-item-text">Premium structures designed for outdoor venues that want to eleevate their guest experience.</p>
@@ -92,10 +100,13 @@ tags: "sitemap"
 				<a href="/income-suites/" class="cs-link">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia11.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Modern white and wood micro-structure nestled in a forested property" width="587" height="350" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Income Suites (AirBnB)</h3>
 					<p class="cs-item-text">A self-contained premium unit that adds value to your property and flexibility to your finances.</p>
@@ -105,10 +116,13 @@ tags: "sitemap"
 				<a href="/backyard-studios/" class="cs-link">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 576, height: 320 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 594, height: 410 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 1174, height: 700 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia13.jpg" | resize({ width: 1174, height: 700 }) | jpeg %}" alt="Glass-front Arcadia backyard studio glowing warmly at night in a suburban yard" width="587" height="350" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Backyard Studios</h3>
 					<p class="cs-item-text">Your own private space. A creative studio, a personal sanctuary, or simply room to breathe.</p>
@@ -138,7 +152,14 @@ tags: "sitemap"
 			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/hero.jpg" alt="not typical" width="1800" height="860" />
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 912, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia2.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Premium A-frame micro-structure with stone base and floor-to-ceiling windows at sunset" width="1193" height="680" loading="lazy" decoding="async">
+
 		</picture>
 	</div>
 </section>
@@ -197,7 +218,14 @@ tags: "sitemap"
 				<a href="/contact/" class="cs-button-solid">Inquire Today</a>
 			</div>
 			<picture class="cs-picture">
-				<img src="/assets/images/hero.jpg" alt="not typical" width="1800" height="860" />
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 912, height: 1434 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 2386, height: 1434 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia12.jpg" | resize({ width: 2386, height: 1434 }) | jpeg %}" alt="Arcadia micro-structure with large glass windows set among birch trees at golden hour" width="1193" height="717" loading="lazy" decoding="async">
+
 			</picture>
 		</div>
 	</div>
@@ -213,50 +241,65 @@ tags: "sitemap"
 				<li class="cs-item">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia3.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Modern black gable micro-structure with stone facade and wood accents in an open field" width="540" height="380" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Modern</h3>
 				</li>
 				<li class="cs-item">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building10.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Wood retreat micro-structure overlooking a lake with a fire pit on the deck" width="540" height="380" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Retreat</h3>
 				</li>
 				<li class="cs-item">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building15.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia7.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Rustic vertical cedar-clad micro-structure with sliding glass doors in a pine forest" width="540" height="380" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Rustic</h3>
 				</li>
 				<li class="cs-item">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building16.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building16.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building16.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia8.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Luxury white concrete and glass micro-structure with wraparound glazing on a manicured lot" width="540" height="380" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Luxury</h3>
 				</li>
 				<li class="cs-item">
 					<picture class="cs-picture">
 						<!--Mobile Image-->
-						<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<!--Tablet and above Image-->
-						<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" />
-						<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building11.jpg" alt="building" width="305" height="340" />
+						<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 438, height: 520 }) | webp %}" type="image/webp">
+						<!--Tablet Image-->
+						<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 560, height: 760 }) | webp %}" type="image/webp">
+						<!--Desktop Image-->
+						<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 1080, height: 760 }) | webp %}" type="image/webp">
+						<img src="{% getUrl "/assets/images/arcadia4.jpg" | resize({ width: 1080, height: 760 }) | jpeg %}" alt="Contemporary flat-roof micro-structure with horizontal wood cladding and floor-to-ceiling glass" width="540" height="380" loading="lazy" decoding="async">
+
 					</picture>
 					<h3 class="cs-h3">Contemporary</h3>
 				</li>
@@ -302,10 +345,24 @@ tags: "sitemap"
 		</div>
 
 		<picture class="cs-picture cs-picture1">
-			<img src="/assets/images/hero.jpg" alt="not typical" width="1800" height="860" />
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 516, height: 1076 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | jpeg %}" alt="Completed Arcadia micro-structure installed in a residential backyard" width="511" height="538" loading="lazy" decoding="async">
+
 		</picture>
 		<picture class="cs-picture cs-picture2">
-			<img src="/assets/images/hero.jpg" alt="not typical" width="1800" height="860" />
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 576, height: 960 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 674, height: 1656 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1326, height: 1380 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1326, height: 1380 }) | jpeg %}" alt="Close-up of premium cedar siding with black metal trim on an Arcadia structure" width="663" height="690" loading="lazy" decoding="async">
+
 		</picture>
 	</div>
 </section>
@@ -318,20 +375,26 @@ tags: "sitemap"
 	<div class="cs-container">
 		<picture class="cs-picture cs-picture1">
 			<!--Mobile Image-->
-			<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building17.jpg" />
-			<!--Tablet and above Image-->
-			<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building17.jpg" />
-			<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building17.jpg" alt="nice house" width="517" height="650" />
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 576, height: 704 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 912, height: 1280 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1280 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1280 }) | jpeg %}" alt="Arcadia hospitality unit on a golf course with guests enjoying the outdoor deck at sunset" width="587" height="640" loading="lazy" decoding="async">
+
 		</picture>
 		<div class="cs-content">
 			<h2 class="cs-title">Hospitality Partnerships</h2>
 
 			<picture class="cs-picture cs-picture2">
 				<!--Mobile Image-->
-				<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/room3.jpg" />
-				<!--Tablet and above Image-->
-				<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/room3.jpg" />
-				<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/room3.jpg" alt="nice house" width="1215" height="660" />
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 576, height: 844 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 912, height: 1228 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia premium unit placed at vineyard" width="1193" height="680" loading="lazy" decoding="async">
+
 			</picture>
 
 			<h3 class="cs-h3">Designed for golf courses, wineries, and event venues looking to create premium overnight guest experiences directly on-site.</h3>
@@ -351,10 +414,13 @@ tags: "sitemap"
 			</div>
 			<picture class="cs-faq-picture">
 				<!--Mobile Image-->
-				<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-small.jpg" />
-				<!--Tablet and above Image-->
-				<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-small.jpg" />
-				<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-small.jpg" alt="appliance" width="522" height="400" />
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 576, height: 720 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 766, height: 1154 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | jpeg %}" alt="Cozy wood-clad Arcadia backyard studio glowing warmly at night with car in driveway" width="514" height="547" loading="lazy" decoding="async">
+
 			</picture>
 			<ul class="cs-faq">
 				<li class="cs-faq-item">
@@ -370,7 +436,9 @@ tags: "sitemap"
 					<button class="cs-button">
 						<span class="cs-button-text">2. Can this be a guest house?</span>
 					</button>
-					<p class="cs-item-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.</p>
+					<p class="cs-item-p">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam.
+					</p>
 				</li>
 				<li class="cs-faq-item">
 					<button class="cs-button">
@@ -425,10 +493,13 @@ tags: "sitemap"
 		<div class="cs-picture-group">
 			<picture class="cs-picture">
 				<!--Mobile Image-->
-				<source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-large.jpg" />
-				<!--Tablet and above Image-->
-				<source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-large.jpg" />
-				<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review-large.jpg" alt="appliance" width="522" height="400" />
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 576, height: 592 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1864, height: 832 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | jpeg %}" alt="White traditional-style Arcadia micro-structure with stone pathway through trees at dusk" width="587" height="700" loading="lazy" decoding="async">
+
 			</picture>
 			<h3 class="cs-h3">Answer Not Here?</h3>
 			<p class="cs-text">Every property and situation is unique. Reach out directly and we'll walk you through it.</p>
