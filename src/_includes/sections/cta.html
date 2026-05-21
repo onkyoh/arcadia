@@ -3,22 +3,22 @@
 <!-- ============================================ -->
 
 <section id="cta-2353">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h2 class="cs-title">Explore What’s Possible With Your Property</h2>
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Explore What’s Possible With Your Property</h2>
 
-            <a href="/contact/" class="cs-button-solid">Request Information</a>
-        </div>
-        <picture class="cs-picture">
-        	<!--Mobile Image-->
-        	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia5.jpg" | resize({ width: 576, height: 900 }) | webp %}" type="image/webp">
-        	<!--Tablet Image-->
+			<a href="/contact/" class="cs-button-solid">Request Information</a>
+		</div>
+		<picture class="cs-picture">
+        	
+        	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia5.jpg" | resize({ width: 656, height: 480 }) | webp %}" type="image/webp">
+        	
         	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5.jpg" | resize({ width: 974, height: 846 }) | webp %}" type="image/webp">
-        	<!--Desktop Image-->
+      
         	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5.jpg" | resize({ width: 1878, height: 1044 }) | webp %}" type="image/webp">
         	<img src="{% getUrl "/assets/images/arcadia5.jpg" | resize({ width: 1878, height: 1044 }) | jpeg %}" alt="Close-up of premium cedar and stone window detail on an Arcadia micro-structure at golden hour" width="939" height="522" loading="lazy" decoding="async">
 
         </picture>
-    </div>
+
+	</div>
 </section>
-                                
