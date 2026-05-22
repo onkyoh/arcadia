@@ -1,0 +1,99 @@
+---
+description: "Arcadia designs and delivers premium hospitality micro-structures that transform underused spaces into unforgettable guest experiences and new revenue opportunities for property owners."
+permalink: "/mission/"
+title: "Mission | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css" />
+<script defer src="/assets/js/animations/mission.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+
+<!-- Any page-specific tags that belong in the <head> -->
+
+{% endblock %} {% block body %}
+
+
+<!-- ============================================ -->
+<!--                  Mission                    -->
+<!-- ============================================ -->
+
+<section id="mission">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h1 class="cs-title">The Mission</h1>
+            <h3 class="cs-h3">
+                Arcadia designs and delivers premium hospitality micro-structures that transform underused spaces into unforgettable guest experiences — combining precision-built construction, modern design, and scalable production systems to create new revenue opportunities for property owners and hospitality partners.
+            </h3>
+		</div>
+
+		<picture class="cs-picture cs-picture1">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 594, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1174, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1174, height: 1360 }) | jpeg %}" alt="Completed Arcadia micro-structure installed in a residential backyard" width="587" height="680" fetchpriority="high" decoding="async">
+		</picture>
+		<picture class="cs-picture cs-picture2">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 594, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1174, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1174, height: 1360 }) | jpeg %}" alt="Close-up of premium cedar siding with black metal trim on an Arcadia structure" width="587" height="680" fetchpriority="high" decoding="async">
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Why Choose Arcadia?         -->
+<!-- ============================================ -->
+
+<section id="why">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Why Arcadia</h2>
+			<ul class="cs-ul">
+				<li class="cs-li">
+					<h3 class="cs-h3">Built by experienced construction professionals</h3>
+				</li>
+				<li class="cs-li">
+					<h3 class="cs-h3">Ontario building code compliant</h3>
+				</li>
+				<li class="cs-li">
+					<h3 class="cs-h3">Premium modern designs</h3>
+				</li>
+				<li class="cs-li">
+					<h3 class="cs-h3">Flexible placement models</h3>
+				</li>
+				<li class="cs-li">
+					<h3 class="cs-h3">Hospitality focused concepts</h3>
+				</li>
+                <li class="cs-li">
+					<h3 class="cs-h3">Personalized project planning</h3>
+				</li>
+			</ul>
+			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+		</div>
+
+		<picture class="cs-picture cs-picture1">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 576, height: 620 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 516, height: 1076 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/arcadia14.jpg" | resize({ width: 1022, height: 1076 }) | jpeg %}" alt="Completed Arcadia micro-structure installed in a residential backyard" width="511" height="538" loading="lazy" decoding="async">
+
+		</picture>
+
+	</div>
+</section>
+
+
+{% endblock %}

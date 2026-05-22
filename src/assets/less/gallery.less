@@ -1,0 +1,57 @@
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+	#gallery {
+		padding: var(--innerSectionPadding);
+
+		.cs-container {
+			width: 100%;
+			margin: auto;
+		}
+
+		.cs-gallery {
+			display: grid;
+			align-items: start;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--columnGap);
+		}
+
+		.cs-gallery-item {
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+				transition: transform 0.5s ease;
+			}
+		}
+
+		/* Wide items span full width on mobile too */
+		.cs-gallery-item--wide {
+			grid-column: span 2;
+		}
+	}
+}
+
+/* Tablet + Desktop */
+@media only screen and (min-width: 48rem) {
+	#gallery {
+		.cs-gallery {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		/* Portrait items always stay 1/3 */
+		.cs-gallery-item--portrait {
+			grid-column: span 1;
+		}
+
+		/* Wide landscape items span 2/3 */
+		.cs-gallery-item--wide {
+			grid-column: span 2;
+		}
+	}
+}

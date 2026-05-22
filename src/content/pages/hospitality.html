@@ -1,0 +1,88 @@
+---
+description: "Transform scenic properties into boutique guest destinations with Arcadia micro-structures. Purpose-built for golf courses, vineyards, and waterfront resorts."
+permalink: "/hospitality/"
+title: "Hospitality | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<link rel="stylesheet" href="/assets/css/use-case.css" />
+<script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Intro                    -->
+<!-- ============================================ -->
+
+<section id="intro">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h1 class="cs-title">Built for Hospitality Experiences</h1>
+			<p class="cs-text">Transform any scenic property into a boutique guest destination. Arcadia units are purpose-built for golf courses, vineyards, waterfront resorts, and anywhere unforgettable guest experiences matter.</p>
+			<p class="cs-text">Premium guest accommodations designed for hospitality-first settings. Minimal footprint, maximum impact.</p>
+			<a href="/contact/" class="cs-button-solid">Start a Conversation</a>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia micro-structure in a scenic hospitality setting" width="1193" height="680" fetchpriority="high" decoding="async">
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Gallery                   -->
+<!-- ============================================ -->
+
+<section id="gallery">
+	<div class="cs-container">
+		<div class="cs-gallery">
+			<div class="cs-gallery-item">
+				<img src="/assets/images/hospitality2.jpg" alt="Arcadia hospitality suite exterior" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/hospitality3.jpg" alt="Arcadia hospitality suite detail" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/hospitality4.jpg" alt="Arcadia hospitality suite in a vineyard setting" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/hospitality5.jpg" alt="Arcadia hospitality suite at a resort property" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/hospitality6.jpg" alt="Arcadia hospitality suite interior" loading="lazy" decoding="async">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Closing                   -->
+<!-- ============================================ -->
+
+<section id="closing">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">A New Standard in Guest Experience</h2>
+			<p class="cs-text">Arcadia structures are designed for properties that take the guest experience seriously. Whether you're managing a boutique resort, a vineyard, or a waterfront destination, we work with you to find the right fit, from unit selection through placement, delivery, and ongoing support.</p>
+			<p class="cs-text">Every hospitality partnership is evaluated individually to ensure the right fit for your property, your guests, and your goals.</p>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality7.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality7.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality7.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/hospitality7.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia hospitality structure on a scenic property" width="1193" height="680" loading="lazy" decoding="async">
+		</picture>
+	</div>
+</section>
+
+{% endblock %}

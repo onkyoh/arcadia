@@ -1,0 +1,34 @@
+<!--  -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+<!--  -->
+
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia micro-structure on a residential property" width="1193" height="680" fetchpriority="high" decoding="async">
+</picture>
+
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/income6.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite interior" width="1193" height="680" loading="lazy" decoding="async">
+</picture>
+
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 974, height: 804 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 1878, height: 1044 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 1878, height: 1044 }) | jpeg %}" alt="Close-up of premium cedar and stone window detail on an Arcadia micro-structure at golden hour" width="939" height="522" loading="lazy" decoding="async">
+</picture>
+
