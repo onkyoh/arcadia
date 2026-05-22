@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Add a premium backyard studio to your property. Arcadia micro-structures are self-contained and private — perfect as a home office, guest suite, or creative retreat."
 permalink: "/backyard-studios/"
 title: "Backyard Studios | Arcadia Micro Structures"
 ---
@@ -8,6 +8,7 @@ title: "Backyard Studios | Arcadia Micro Structures"
 
 <link rel="stylesheet" href="/assets/css/use-case.css" />
 <script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
 
 {% endblock %} {% block body %}
 
@@ -24,7 +25,13 @@ title: "Backyard Studios | Arcadia Micro Structures"
 			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/backyard1.jpg" alt="Arcadia backyard studio in a residential setting" width="700" height="800" loading="eager" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia backyard studio in a residential setting" width="1193" height="680" fetchpriority="high" decoding="async">
 		</picture>
 	</div>
 </section>
@@ -67,7 +74,13 @@ title: "Backyard Studios | Arcadia Micro Structures"
 			<p class="cs-text">You get premium, private space without the hassle of a full build, and a structure that adds real value to your property from day one.</p>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/backyard7.jpg" alt="Arcadia backyard studio delivered and installed" width="700" height="800" loading="lazy" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia backyard studio delivered and installed" width="1193" height="680" loading="lazy" decoding="async">
 		</picture>
 	</div>
 </section>

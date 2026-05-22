@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Generate rental income with an Arcadia income suite. Airbnb-ready micro-structures designed for short-term rentals that add long-term value to your property."
 permalink: "/income-suites/"
 title: "Income Suites | Arcadia Micro Structures"
 ---
@@ -8,6 +8,7 @@ title: "Income Suites | Arcadia Micro Structures"
 
 <link rel="stylesheet" href="/assets/css/use-case.css" />
 <script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
 
 {% endblock %} {% block body %}
 
@@ -24,7 +25,13 @@ title: "Income Suites | Arcadia Micro Structures"
 			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/income1.jpg" alt="Arcadia income suite on a residential property" width="700" height="800" loading="eager" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite on a residential property" width="1193" height="680" fetchpriority="high" decoding="async">
 		</picture>
 	</div>
 </section>
@@ -67,7 +74,13 @@ title: "Income Suites | Arcadia Micro Structures"
 			<p class="cs-text">We help you understand what makes sense for your specific property and market, without overcomplicating the decision. Every situation is evaluated individually.</p>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/income7.jpg" alt="Arcadia income suite generating rental income" width="700" height="800" loading="lazy" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income7.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite generating rental income" width="1193" height="680" loading="lazy" decoding="async">
 		</picture>
 	</div>
 </section>

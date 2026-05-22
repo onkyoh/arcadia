@@ -1,5 +1,5 @@
 ---
-description: "Explore flexible paths to owning an Arcadia Micro Structure and understand the income potential for your property."
+description: "Explore flexible paths to owning an Arcadia Micro Structure and understand the income potential for your property. Traditional financing, revenue-sharing, and more."
 permalink: "/financing/"
 title: "Financing & Income | Arcadia Micro Structures"
 ---
@@ -8,6 +8,7 @@ title: "Financing & Income | Arcadia Micro Structures"
 
 <link rel="stylesheet" href="/assets/css/use-case.css" />
 <script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
 
 {% endblock %} {% block body %}
 
@@ -24,7 +25,13 @@ title: "Financing & Income | Arcadia Micro Structures"
 			<a href="/contact/" class="cs-button-solid">Book a Discovery Call</a>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/income1.jpg" alt="Arcadia micro-structure on a residential property" width="700" height="800" loading="eager" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia micro-structure on a residential property" width="1193" height="680" fetchpriority="high" decoding="async">
 		</picture>
 	</div>
 </section>
@@ -42,7 +49,13 @@ title: "Financing & Income | Arcadia Micro Structures"
 			<p class="cs-text">Every property and partnership structure would be evaluated individually.</p>
 		</div>
 		<picture class="cs-picture">
-			<img src="/assets/images/income6.jpg" alt="Arcadia income suite interior" width="700" height="800" loading="lazy" decoding="async">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income6.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income6.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite interior" width="1193" height="680" loading="lazy" decoding="async">
 		</picture>
 	</div>
 </section>
