@@ -6,9 +6,9 @@ mm.add("(max-width: 767px)", () => {
 
 	// Mission — page-load timeline (first section, in view on load)
 	gsap.timeline({ delay: 0.15 })
-		.from("#mission .cs-picture1", { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" })
-		.from("#mission .cs-title",    { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" }, "-=0.55")
-		.from("#mission .cs-h3",       { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" }, "-=0.55");
+		.fromTo("#mission .cs-picture1", { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" })
+		.fromTo("#mission .cs-title",    { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" }, "-=0.55")
+		.fromTo("#mission .cs-h3",       { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" }, "-=0.55");
 	reveal("#mission .cs-picture2", { y: Y.el });
 
 	// Why — picture has order:-1 on mobile so it's visually first; each element gets its own trigger
@@ -23,9 +23,9 @@ mm.add("(min-width: 768px)", () => {
 
 	// Mission — page-load timeline
 	gsap.timeline({ delay: 0.25 })
-		.from("#mission .cs-picture1", { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" })
-		.from("#mission .cs-title",    { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" }, "-=0.55")
-		.from("#mission .cs-h3",       { opacity: 0, y: Y.el, duration: 0.8,  ease: "power2.out" }, "-=0.55");
+		.fromTo("#mission .cs-picture1", { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" })
+		.fromTo("#mission .cs-title",    { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" }, "-=0.55")
+		.fromTo("#mission .cs-h3",       { opacity: 0, y: Y.el }, { opacity: 1, y: 0, duration: 0.8,  ease: "power2.out" }, "-=0.55");
 	reveal("#mission .cs-picture2", { y: Y.el });
 
 	// Why

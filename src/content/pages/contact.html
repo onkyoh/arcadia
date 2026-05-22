@@ -5,6 +5,14 @@ permalink: "/contact/"
 ---
 
 {% extends "layouts/base.html" %} {% block head %}
+<style>
+  #contact-717 .cs-picture,
+  #contact-717 .cs-title,
+  #contact-717 .cs-text,
+  #contact-717 .cs-label,
+  #contact-717 .cs-fieldset,
+  #contact-717 .cs-button-solid { opacity: 0; }
+</style>
 <!--  -->
 <link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 400, height: 398 }) | webp %}" />
 <!--  -->

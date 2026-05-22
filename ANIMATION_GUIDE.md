@@ -64,11 +64,39 @@ When a `.cs-content` block interleaves different element types (e.g. `.cs-h3` �
 ### Rule 4 — Images inside cards are not animated separately
 When a `.cs-picture` is nested inside a `.cs-item`, it is revealed as part of the card stagger. Only animate `.cs-picture` elements that are **siblings of `.cs-content`** (i.e. section-level images).
 
-### Rule 5 — Hero is a special case (on-load, no ScrollTrigger)
-The hero section is already in view on page load, so it uses a `gsap.timeline()` instead of ScrollTrigger:
-- Sequence: `.cs-heading` → `.cs-title` → `.cs-button-group`
-- Overlap: `-=0.55` (each element starts 0.55s before the previous finishes)
-- Delay: `0.15s` mobile, `0.25s` desktop
+### Rule 5 — Above-fold sections: on-load timeline, no ScrollTrigger
+
+Above-fold sections are in view on page load — never use ScrollTrigger for them. Use a `gsap.timeline()` instead.
+
+**Sequence:** `.cs-picture` → `.cs-title` → `.cs-text` / `.cs-h3` → `.cs-button-solid`
+**Overlap:** `-=0.55` per step
+**Delay:** `0.15s` mobile, `0.25s` desktop
+
+#### Flash prevention (required for every above-fold section)
+
+Both changes must be made together — either one alone breaks the animation.
+
+**1. Inline `<style>` in `{% block head %}`** (never in a LESS file):
+```html
+{% block head %}
+<style>
+  #section-id .cs-picture,
+  #section-id .cs-title,
+  #section-id .cs-text,
+  #section-id .cs-button-solid { opacity: 0; }
+</style>
+```
+Inline `<style>` tags in `<head>` are render-blocking — they apply before the browser paints anything, so elements are never visible before GSAP runs. LESS files don't work here: Eleventy only recompiles them when template files change, introducing compilation uncertainty.
+
+**2. `fromTo()` with explicit end state** (never `from()` inside a delayed timeline):
+```js
+gsap.timeline({ delay: 0.15 })
+  .fromTo("#section-id .cs-picture",      { opacity: 0, y: Y.el   }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" })
+  .fromTo("#section-id .cs-title",        { opacity: 0, y: Y.el   }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.55")
+  .fromTo("#section-id .cs-text",         { opacity: 0, y: Y.el   }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.55")
+  .fromTo("#section-id .cs-button-solid", { opacity: 0, y: Y.item }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.55");
+```
+`from()` inside a delayed timeline captures the CSS `opacity: 0` as its *end* state — the element stays invisible forever. `fromTo()` with `{ opacity: 1, y: 0 }` explicitly sets the destination regardless of CSS.
 
 ---
 
