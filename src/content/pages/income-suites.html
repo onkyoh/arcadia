@@ -1,0 +1,88 @@
+---
+description: "Generate rental income with an Arcadia income suite. Airbnb-ready micro-structures designed for short-term rentals that add long-term value to your property."
+permalink: "/income-suites/"
+title: "Income Suites | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<link rel="stylesheet" href="/assets/css/use-case.css" />
+<script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Intro                    -->
+<!-- ============================================ -->
+
+<section id="intro">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h1 class="cs-title">Your Property. Your Revenue.</h1>
+			<p class="cs-text">In the right location, an Arcadia unit can generate meaningful income through short-term rental platforms. Keep it personal, rent it occasionally, or run it full time.</p>
+			<p class="cs-text">Airbnb-ready modern design with no large renovation required. Full ownership that adds long-term value to your property.</p>
+			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite on a residential property" width="1193" height="680" fetchpriority="high" decoding="async">
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Gallery                   -->
+<!-- ============================================ -->
+
+<section id="gallery">
+	<div class="cs-container">
+		<div class="cs-gallery">
+			<div class="cs-gallery-item">
+				<img src="/assets/images/income2.jpg" alt="Arcadia income suite exterior" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/income3.jpg" alt="Arcadia income suite on a residential lot" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/income4.jpg" alt="Arcadia income suite modern design" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/income5.jpg" alt="Arcadia income suite at dusk" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/income6.jpg" alt="Arcadia income suite interior living space" loading="lazy" decoding="async">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Closing                   -->
+<!-- ============================================ -->
+
+<section id="closing">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Ownership That Works For You</h2>
+			<p class="cs-text">How you use it is entirely up to you. Keep it personal, rent it out occasionally, or run it as a full short-term rental. The unit is yours.</p>
+			<p class="cs-text">We help you understand what makes sense for your specific property and market, without overcomplicating the decision. Every situation is evaluated individually.</p>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income7.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/income7.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia income suite generating rental income" width="1193" height="680" loading="lazy" decoding="async">
+		</picture>
+	</div>
+</section>
+
+{% endblock %}

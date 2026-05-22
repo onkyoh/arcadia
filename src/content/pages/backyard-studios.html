@@ -1,0 +1,88 @@
+---
+description: "Add a premium backyard studio to your property. Arcadia micro-structures are self-contained and private — perfect as a home office, guest suite, or creative retreat."
+permalink: "/backyard-studios/"
+title: "Backyard Studios | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<link rel="stylesheet" href="/assets/css/use-case.css" />
+<script defer src="/assets/js/animations/use-case.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 576, height: 640 }) | webp %}" />
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Intro                    -->
+<!-- ============================================ -->
+
+<section id="intro">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h1 class="cs-title">Your Own Private Escape</h1>
+			<p class="cs-text">A private retreat, home office, creative studio, or guest suite. An Arcadia unit adds premium space right on your property without a major build.</p>
+			<p class="cs-text">Self-contained and private, with modern designs that complement any property. Multiple use options in one structure that adds long-term value.</p>
+			<a href="/contact/" class="cs-button-solid">Inquire Today</a>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia backyard studio in a residential setting" width="1193" height="680" fetchpriority="high" decoding="async">
+		</picture>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Gallery                   -->
+<!-- ============================================ -->
+
+<section id="gallery">
+	<div class="cs-container">
+		<div class="cs-gallery">
+			<div class="cs-gallery-item">
+				<img src="/assets/images/backyard2.jpg" alt="Arcadia backyard studio exterior" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/backyard3.jpg" alt="Arcadia backyard studio in a private garden" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/backyard4.jpg" alt="Arcadia backyard studio modern architecture" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/backyard5.jpg" alt="Arcadia backyard studio surrounded by nature" loading="lazy" decoding="async">
+			</div>
+			<div class="cs-gallery-item">
+				<img src="/assets/images/backyard6.jpg" alt="Arcadia backyard studio interior space" loading="lazy" decoding="async">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Closing                   -->
+<!-- ============================================ -->
+
+<section id="closing">
+	<div class="cs-container">
+		<div class="cs-content">
+			<h2 class="cs-title">Delivered and Ready</h2>
+			<p class="cs-text">The process is straightforward. Choose your unit, we build it offsite, and we deliver and place it on your property. No major construction, no extended timelines, and no disruption to your daily life.</p>
+			<p class="cs-text">You get premium, private space without the hassle of a full build, and a structure that adds real value to your property from day one.</p>
+		</div>
+		<picture class="cs-picture">
+			<!--Mobile Image-->
+			<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
+			<!--Tablet Image-->
+			<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 1230, height: 1228 }) | webp %}" type="image/webp">
+			<!--Desktop Image-->
+			<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 2386, height: 1360 }) | webp %}" type="image/webp">
+			<img src="{% getUrl "/assets/images/backyard7.jpg" | resize({ width: 2386, height: 1360 }) | jpeg %}" alt="Arcadia backyard studio delivered and installed" width="1193" height="680" loading="lazy" decoding="async">
+		</picture>
+	</div>
+</section>
+
+{% endblock %}

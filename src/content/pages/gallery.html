@@ -1,0 +1,263 @@
+---
+description: "Browse the Arcadia micro-structure gallery. Explore backyard studios, income suites, and hospitality units in residential and scenic settings across Ontario."
+permalink: "/gallery/"
+title: "Gallery | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css" />
+<script defer src="/assets/js/animations/gallery.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/hospitality4.jpg" | resize({ width: 576, height: 394 }) | webp %}" />
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 272, height: 364 }) | webp %}" />
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                   Gallery                   -->
+<!-- ============================================ -->
+
+<section id="gallery">
+	<div class="cs-container">
+		<div class="cs-gallery">
+			<!-- Row 1: W + N -->
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality4.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality4.jpg" | resize({ width: 1230, height: 840 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality4.jpg" | resize({ width: 2386, height: 1632 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/hospitality4.jpg" | resize({ width: 2386, height: 1632 }) | jpeg %}" alt="Arcadia hospitality suite in a vineyard setting" width="1193" height="816" fetchpriority="high" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 272, height: 364 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 594, height: 794 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1174, height: 1568 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1174, height: 1568 }) | jpeg %}" alt="Arcadia micro-structure portrait view" width="587" height="784" fetchpriority="high" decoding="async">
+			</picture>
+
+			<!-- Row 2: N N N -->
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 594, height: 408 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 804 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia9.jpg" | resize({ width: 1174, height: 804 }) | jpeg %}" alt="Arcadia micro-structure on a golf course at sunset" width="587" height="402" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard5-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard5-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard5-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/backyard5-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia backyard studio glowing at twilight" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income4-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income4-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income4-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/income4-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia income suite modern design" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 3: W + N -->
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 1230, height: 842 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 2386, height: 1634 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia19.jpg" | resize({ width: 2386, height: 1634 }) | jpeg %}" alt="Arcadia micro-structure on a waterfront property" width="1193" height="817" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income6-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income6-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income6-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/income6-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia cedar gable structure in forest" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 5: N + W -->
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 272, height: 364 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 594, height: 794 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1174, height: 1568 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia17.jpg" | resize({ width: 1174, height: 1568 }) | jpeg %}" alt="Arcadia micro-structure portrait view" width="587" height="784" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality5.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality5.jpg" | resize({ width: 1230, height: 840 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality5.jpg" | resize({ width: 2386, height: 1632 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/hospitality5.jpg" | resize({ width: 2386, height: 1632 }) | jpeg %}" alt="Arcadia hospitality suite with stone exterior at night" width="1193" height="816" loading="lazy" decoding="async">
+			</picture>
+
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 594, height: 406 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 1174, height: 802 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/backyard1.jpg" | resize({ width: 1174, height: 802 }) | jpeg %}" alt="Arcadia backyard studio on a residential property" width="587" height="401" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 6: N N N -->
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia13-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia13-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia13-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia concrete micro-structure at night" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 272, height: 362 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 594, height: 792 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1564 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia20.jpg" | resize({ width: 1174, height: 1564 }) | jpeg %}" alt="Arcadia micro-structure portrait view" width="587" height="782" loading="lazy" decoding="async">
+			</picture>
+			<!-- Row 7: W + N -->
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income5.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income5.jpg" | resize({ width: 594, height: 406 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income5.jpg" | resize({ width: 1174, height: 802 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/income5.jpg" | resize({ width: 1174, height: 802 }) | jpeg %}" alt="Arcadia income suite at dusk" width="587" height="401" loading="lazy" decoding="async">
+			</picture>
+
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 1230, height: 840 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 2386, height: 1632 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/hospitality1.jpg" | resize({ width: 2386, height: 1632 }) | jpeg %}" alt="Arcadia hospitality suite on a golf course at golden hour" width="1193" height="816" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia3-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia3-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia3-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia black gable structure in a field" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 8: N N N -->
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard6-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard6-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard6-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/backyard6-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia backyard studio portrait view" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 272, height: 364 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 594, height: 794 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1568 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1568 }) | jpeg %}" alt="Arcadia micro-structure portrait view" width="587" height="784" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 9: N + N N -->
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income3.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income3.jpg" | resize({ width: 594, height: 406 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income3.jpg" | resize({ width: 1174, height: 802 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/income3.jpg" | resize({ width: 1174, height: 802 }) | jpeg %}" alt="Arcadia income suite modern design" width="587" height="401" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard3.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard3.jpg" | resize({ width: 594, height: 406 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard3.jpg" | resize({ width: 1174, height: 802 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/backyard3.jpg" | resize({ width: 1174, height: 802 }) | jpeg %}" alt="Arcadia backyard studio surrounded by nature" width="587" height="401" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality2.jpg" | resize({ width: 272, height: 186 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality2.jpg" | resize({ width: 594, height: 406 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality2.jpg" | resize({ width: 1174, height: 802 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/hospitality2.jpg" | resize({ width: 1174, height: 802 }) | jpeg %}" alt="Arcadia hospitality suite exterior" width="587" height="401" loading="lazy" decoding="async">
+			</picture>
+
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/backyard4.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/backyard4.jpg" | resize({ width: 1230, height: 840 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/backyard4.jpg" | resize({ width: 2386, height: 1632 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/backyard4.jpg" | resize({ width: 2386, height: 1632 }) | jpeg %}" alt="Arcadia backyard studio surrounded by nature" width="1193" height="816" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/income2-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/income2-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/income2-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/income2-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia cedar structure in forest at night" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+			<picture class="cs-gallery-item cs-gallery-item--portrait">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hospitality7-portrait.jpg" | resize({ width: 272, height: 408 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality7-portrait.jpg" | resize({ width: 594, height: 892 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hospitality7-portrait.jpg" | resize({ width: 1174, height: 1760 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/hospitality7-portrait.jpg" | resize({ width: 1174, height: 1760 }) | jpeg %}" alt="Arcadia hospitality structure on a scenic property" width="587" height="880" loading="lazy" decoding="async">
+			</picture>
+
+			<!-- Row 10: W + N -->
+			<picture class="cs-gallery-item cs-gallery-item--wide">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 576, height: 394 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 1230, height: 840 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1632 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia21.jpg" | resize({ width: 2386, height: 1632 }) | jpeg %}" alt="Arcadia micro-structure at a vineyard" width="1193" height="816" loading="lazy" decoding="async">
+			</picture>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

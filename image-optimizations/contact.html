@@ -1,0 +1,24 @@
+<!--  -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia19-f0f103cd.jpeg" | resize({ width: 576, height: 574 }) | webp %}" />
+<!--  -->
+
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia19-f0f103cd.jpeg" | resize({ width: 576, height: 574 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19-f0f103cd.jpeg" | resize({ width: 900, height: 1660 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia19-f0f103cd.jpeg" | resize({ width: 2136, height: 1660 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/arcadia19-f0f103cd.jpeg" | resize({ width: 2136, height: 1660 }) | jpeg %}" alt="Arcadia Micro Structures luxury retreat unit concept" width="1068" height="830" fetchpriority="high" decoding="async">
+</picture>
+
+<picture class="cs-picture">
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 974, height: 804 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 1878, height: 1044 }) | webp %}" type="image/webp">
+	<img src="{% getUrl "/assets/images/arcadia5-db35f4e1.jpeg" | resize({ width: 1878, height: 1044 }) | jpeg %}" alt="Close-up of premium cedar and stone window detail on an Arcadia micro-structure at golden hour" width="939" height="522" loading="lazy" decoding="async">
+</picture>
+
