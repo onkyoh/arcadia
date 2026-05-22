@@ -1,0 +1,205 @@
+/*-- -------------------------- -->
+<---        Mission        -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+	#mission {
+		padding: var(--innerSectionPadding);
+
+		.cs-container {
+			width: 100%;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			gap: (32/16rem);
+			position: relative;
+			z-index: 1;
+		}
+
+		.cs-content {
+			text-align: start;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.cs-title {
+			margin-bottom: (24/16rem);
+		}
+
+		.cs-text {
+			margin-bottom: (16/16rem);
+			&:last-of-type {
+				margin-bottom: (32/16rem);
+			}
+		}
+
+		.cs-h3 {
+			font-size: clamp(1.5625rem, 5vw, 1.9375rem);
+		}
+
+		.cs-picture {
+			width: 100%;
+			height: clamp(20rem, 60vw, 42.5rem);
+			display: block;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		.cs-picture1 {
+			order: -1;
+		}
+	}
+}
+
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+	#mission {
+		.cs-container {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			column-gap: var(--columnGap);
+			align-items: flex-start;
+		}
+
+		.cs-picture1 {
+			grid-column: span 6;
+		}
+
+		.cs-picture2 {
+			grid-column: span 12;
+		}
+
+		.cs-content {
+			grid-column: span 6;
+		}
+	}
+}
+
+/* Desktop */
+@media only screen and (min-width: 64rem) {
+	#mission {
+		.cs-content {
+			grid-column: span 4;
+			margin-top: (160/16rem);
+		}
+
+		.cs-picture1 {
+			grid-column: span 4;
+		}
+
+		.cs-picture2 {
+			grid-column: span 4;
+			margin-top: (160/16rem);
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---        Why Arcadia        -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+	#why {
+		padding: var(--sectionPadding);
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.cs-container {
+			width: 100%;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			gap: (32/16rem);
+			position: relative;
+			z-index: 1;
+		}
+
+		.cs-content {
+			text-align: start;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.cs-title {
+			max-width: 7ch;
+			margin-bottom: (24/16rem);
+		}
+
+		.cs-text {
+			margin-bottom: (16/16rem);
+			&:last-of-type {
+				margin-bottom: (32/16rem);
+			}
+		}
+
+		.cs-h3 {
+			font-size: clamp(1.25rem, 3vw, 1.95625rem);
+		}
+
+		.cs-ul {
+			list-style-type: none;
+			margin-bottom: (32/16rem);
+			display: flex;
+			flex-direction: column;
+			gap: clamp(1.25rem, 3vw, 2rem);
+		}
+
+		.cs-picture {
+			width: 100%;
+			height: clamp(20rem, 60vw, 42.5rem);
+			display: block;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+}
+
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+	#why {
+		.cs-container {
+			display: grid;
+			align-items: stretch;
+			grid-template-columns: repeat(12, 1fr);
+			column-gap: var(--columnGap);
+		}
+
+		.cs-content {
+			grid-column: span 6;
+		}
+
+		.cs-picture {
+			grid-column: span 6;
+			order: -1;
+		}
+	}
+}
+
+/* Desktop */
+@media only screen and (min-width: 64rem) {
+	#why {
+		.cs-picture {
+			height: auto;
+		}
+	}
+}

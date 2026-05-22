@@ -22,7 +22,7 @@
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
 		/* 31px - 49px */
-		--headerFontSize: clamp(2.5375rem, 6vw, 5.0625rem);
+		--headerFontSize: clamp(2.5375rem, 5.3vw, 5.0625rem);
 		--bodyFontSize: 1rem;
 		/* 60px - 100px top and bottom */
 		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) clamp(1rem, 4.5vw, 3.75rem);
@@ -829,9 +829,10 @@ html {
 			display: flex;
 			flex-direction: column;
 
+			transition: color 0.3s;
+
 			&:hover {
 				color: var(--primary);
-				text-decoration: underline;
 			}
 		}
 
