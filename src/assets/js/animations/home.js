@@ -45,6 +45,7 @@ mm.add("(max-width: 767px)", () => {
 	reveal("#faq-2294 .cs-title", { y: Y.el });
 	reveal("#faq-2294 .cs-faq-picture", { y: Y.el });
 	reveal("#faq-2294 .cs-faq-item", { y: Y.item, stagger: 0.08, duration: 0.75 });
+	reveal("#faq-2294 .cs-picture", { y: Y.el });
 });
 
 mm.add("(min-width: 768px)", () => {
@@ -91,4 +92,5 @@ mm.add("(min-width: 768px)", () => {
 	reveal("#faq-2294 .cs-title", { y: Y.el });
 	reveal("#faq-2294 .cs-faq-picture", { y: Y.el });
 	reveal("#faq-2294 .cs-faq-item", { y: Y.item, stagger: 0.1, duration: 0.75 });
+	reveal("#faq-2294 .cs-picture", { y: Y.el });
 });

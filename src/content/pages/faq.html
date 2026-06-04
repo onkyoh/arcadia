@@ -1,0 +1,136 @@
+---
+description: "Answers to common questions about Arcadia Micro Structures — from Airbnb use and customization to property requirements, building code compliance, and partnership options."
+permalink: "/faq/"
+title: "Frequently Asked Questions | Arcadia Micro Structures"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<style>
+  #faq-2294 .cs-title,
+  #faq-2294 .cs-faq-picture,
+  #faq-2294 .cs-picture,
+  #faq-2294 .cs-faq-item { opacity: 0; }
+</style>
+
+<link rel="stylesheet" href="/assets/css/faq.css" />
+<script defer src="/assets/js/animations/faq.js"></script>
+<link rel="preload" as="image" href="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 576, height: 720 }) | webp %}" />
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq-2294">
+	<div class="cs-container">
+		<div class="cs-faq-group">
+			<div class="cs-content">
+				<h2 class="cs-title">Common Questions</h2>
+			</div>
+			<picture class="cs-faq-picture">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 576, height: 720 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 766, height: 1154 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia15.jpg" | resize({ width: 1028, height: 1094 }) | jpeg %}" alt="Cozy wood-clad Arcadia backyard studio glowing warmly at night with car in driveway" width="514" height="547" loading="lazy" decoding="async">
+
+			</picture>
+			<ul class="cs-faq">
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">Can this be used as an Airbnb?</span>
+					</button>
+					<p class="cs-item-p">
+						In many cases, yes. Arcadia suites can be designed for short-term rental use, subject to local zoning, municipal regulations, permits, and property-specific requirements. We recommend confirming local requirements before proceeding with any rental plans.
+					</p>
+				</li>
+				<!-- Active class added as default -->
+				<li class="cs-faq-item actived">
+					<button class="cs-button">
+						<span class="cs-button-text">Can this be used as a guest house?</span>
+					</button>
+					<p class="cs-item-p">
+						Yes. Arcadia suites are commonly considered for hosting family, friends, and overnight guests, creating comfortable and private space separate from the main home. Permits and requirements may vary by municipality and intended use.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">Do I need a large property?</span>
+					</button>
+					<p class="cs-item-p">
+						Not necessarily. Many Arcadia suites can be incorporated into existing backyards, rural properties, cottages, and recreational properties. The best fit depends on your lot size, setbacks, servicing, and local regulations.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">Can the designs be customized?</span>
+					</button>
+					<p class="cs-item-p">
+						Yes. Every property is different, which is why Arcadia suites can be customized to suit your needs, preferences, and site conditions. From exterior finishes and layouts to features and amenities, we work with you to create a space that fits your vision.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">What types of properties work best?</span>
+					</button>
+					<p class="cs-item-p">
+						Arcadia suites work well on a variety of properties, including residential backyards, rural properties, cottages, recreational properties, and larger estate lots. The ideal fit depends on your available space, servicing, and local regulations.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">How long does the process take?</span>
+					</button>
+					<p class="cs-item-p">
+						Every project is unique, but most Arcadia suites can be completed within a few months from design and approvals to final construction. Timelines vary based on the design, site conditions, and permitting requirements.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">Are partnership models available?</span>
+					</button>
+					<p class="cs-item-p">
+						Potentially. While many clients choose a traditional purchase and build approach, Arcadia may explore partnership opportunities on select projects where there is a strong fit and mutual benefit.
+					</p>
+				</li>
+				<li class="cs-faq-item">
+					<button class="cs-button">
+						<span class="cs-button-text">Do these meet Ontario building code requirements?</span>
+					</button>
+					<p class="cs-item-p">
+						Yes. Arcadia suites are designed and constructed to comply with applicable Ontario Building Code requirements. Specific requirements may vary depending on the location, intended use, and municipal approval process for each project.
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="cs-picture-group">
+			<picture class="cs-picture">
+				<!--Mobile Image-->
+				<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 576, height: 592 }) | webp %}" type="image/webp">
+				<!--Tablet Image-->
+				<source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1864, height: 832 }) | webp %}" type="image/webp">
+				<!--Desktop Image-->
+				<source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | webp %}" type="image/webp">
+				<img src="{% getUrl "/assets/images/arcadia22.jpg" | resize({ width: 1174, height: 1400 }) | jpeg %}" alt="White traditional-style Arcadia micro-structure with stone pathway through trees at dusk" width="587" height="700" loading="lazy" decoding="async">
+
+			</picture>
+			<h3 class="cs-h3">Answer Not Here?</h3>
+			<p class="cs-text">Every property and situation is unique. Reach out directly and we'll walk you through it.</p>
+			<a href="mailto:{{client.email}}" class="cs-button-solid">Ask A Question</a>
+		</div>
+	</div>
+</section>
+
+<script>
+	const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
+	for (const item of faqItems) {
+		const onClick = () => {
+			item.classList.toggle("active");
+		};
+		item.addEventListener("click", onClick);
+	}
+</script>
+{% endblock %}
