@@ -34,7 +34,7 @@ SECTION 3 — NOT WHAT YOU THINK
 Headline:NOT YOUR TYPICAL MODULAR STRUCTURE.
 Copy:Arcadia Micro Structures are designed around lifestyle, flexibility, aesthetics, and modern living.
 This is not a shipping container.This is not a basic bunkie.This is not a temporary structure.
-These are premium micro-structures designed to enhance property value, create flexible living space, and generate income potential.
+These are premium suites designed to enhance property value, create flexible living space, and generate income potential.
 
 SECTION 4 — SIMPLE PROCESS
 Choose your unitSelect the design that fits your goals.
