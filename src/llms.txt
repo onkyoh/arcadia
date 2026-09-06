@@ -1,0 +1,15 @@
+# Arcadia Micro Structures
+
+> Arcadia Micro Structures designs and builds prefabricated backyard studios and micro structures — used as income suites, hospitality units, and flexible backyard living space.
+
+Arcadia works with homeowners and property investors to add standalone backyard structures that can serve as rental income suites, guest/hospitality units, or extra living space, backed by financing options.
+
+## Pages
+- [Backyard Studios](https://arcadiamicrostructures.com/backyard-studios/): Core product — prefabricated backyard studio structures.
+- [Income Suites](https://arcadiamicrostructures.com/income-suites/): Structures positioned for rental income use cases.
+- [Hospitality](https://arcadiamicrostructures.com/hospitality/): Structures for short-term rental / hospitality use.
+- [Financing](https://arcadiamicrostructures.com/financing/): Financing options for a backyard structure purchase.
+- [Gallery](https://arcadiamicrostructures.com/gallery/): Photos of completed structures.
+- [FAQ](https://arcadiamicrostructures.com/faq/): Common questions.
+- [Mission](https://arcadiamicrostructures.com/mission/): Company mission/story.
+- [Contact](https://arcadiamicrostructures.com/contact/): Get in touch.
