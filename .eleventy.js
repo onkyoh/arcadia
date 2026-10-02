@@ -77,6 +77,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/assets"); // Static assets
   eleventyConfig.addPassthroughCopy("./src/_redirects"); // Redirect rules
+  eleventyConfig.addPassthroughCopy("./src/llms.txt"); // LLM site summary
 
   // ═════════════════════════════════════════════════════════════════════════
   // FILTERS
